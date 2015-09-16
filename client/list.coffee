@@ -1,11 +1,11 @@
-@Swiper = new Swipe(['page1', 'page2'])
+@Swiper = new Swiper(['page1', 'page2'])
 
 Template.list.helpers
   Swiper: -> Swiper
 
 Template.list.rendered = ->
   # initial page
-  Swiper.setInitialPage Router.current().route.getName()
+  Swiper.setInitialPage 'page1'
 
   # page control
   Tracker.autorun ->
