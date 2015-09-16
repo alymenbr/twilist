@@ -1,9 +1,9 @@
-@Swiper = new Swiper(['page1', 'page2'])
+@Swiper = new Swipe(['page1', 'page2'])
 
-Template.list.helpers
+Template.layout.helpers
   Swiper: -> Swiper
 
-Template.list.rendered = ->
+Template.layout.rendered = ->
   # initial page
   Swiper.setInitialPage 'page1'
 
