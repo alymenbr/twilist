@@ -8,3 +8,7 @@ meteor-platform
 autopublish
 insecure
 iron:router
+ccorcos:swipe
+underscore
+stevezhu:lodash
+less
