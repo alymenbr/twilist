@@ -227,9 +227,33 @@ $( document ).ready(function() {
                 }
             }
         });
+
+        //Quote Slider No Transition static
+        $('.quote-slider-no-transition-static').owlCarousel({
+            autoHeight:true,
+            autoplay:false,
+            autoplayTimeout:5000,
+            autoplayHoverPause:true,
+            lazyLoad:true,
+            loop:true,
+            margin:10,
+            nav:false,
+            dots:false,
+            responsive:{
+                0:{
+                    items:1
+                },
+                600:{
+                    items:1
+                },
+                1000:{
+                    items:1
+                }
+            }
+        });      
         
-        $('.next-quote-slider').click(function() {$('.quote-slider-no-transition, .quote-slider-transition').trigger('next.owl.carousel');}); 
-        $('.prev-quote-slider').click(function() {$('.quote-slider-no-transition, .quote-slider-transition').trigger('prev.owl.carousel');});
+        $('.next-quote-slider').click(function() {$('.quote-slider-no-transition, .quote-slider-transition, .quote-slider-no-transition-static').trigger('next.owl.carousel');}); 
+        $('.prev-quote-slider').click(function() {$('.quote-slider-no-transition, .quote-slider-transition, .quote-slider-no-transition-static').trigger('prev.owl.carousel');});
         
         //Placing the Dots if Needed
         function slider_dots(){

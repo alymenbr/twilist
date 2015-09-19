@@ -1,7 +1,7 @@
 <template name="list">
 
 <div class="quote-slider full-bottom">
-    <div class="quote-slider-no-transition"  data-snap-ignore="true">
+    <div class="quote-slider-no-transition-static"  data-snap-ignore="true">
 
         <!-- PAGE1 -->
         <div class="container">
@@ -12,7 +12,7 @@
                 <div class="heading-decoration bg-red-dark"></div>
             </div>
 
-            {{#each tweetList}}
+            {{#each items}}
                 <div class="activity-item container half-bottom">
                     <h5>{{tweet}}</h5>
                     <em>@{{user}} {{time}}</em>
