@@ -32,3 +32,5 @@ App.accessRule(
         launchExternal: false
     }
 );
+
+App.accessRule("*");

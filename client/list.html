@@ -32,17 +32,14 @@
                 <div class="heading-decoration bg-red-dark"></div>
             </div>
 
-            <div class="activity-item container half-bottom">
-                <h5>Case Study: How Bottomline Reached for the Top and Got There with Scrum: </h5>
-                <em>@danielgullo 7h atrás</em>
-            </div>  
-            <div class="decoration"></div>              
+            {{#each items}}
+                <div class="activity-item container half-bottom">
+                    <h5>{{tweet}}</h5>
+                    <em>@{{user}} {{time}}</em>
+                </div>  
+                <div class="decoration"></div>
+            {{/each}}         
 
-
-            <div class="activity-item container half-bottom">
-                <h5>Case Study: How Bottomline Reached for the Top and Got There with Scrum: </h5>
-                <em>@danielgullo 7h atrás</em>
-            </div> 
         </div>
         <!-- PAGE2 -->
 

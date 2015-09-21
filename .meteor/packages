@@ -13,3 +13,6 @@ meteorhacks:npm
 
 
 npm-container
+cosmos:browserify
+browser-policy
+browser-policy-content
