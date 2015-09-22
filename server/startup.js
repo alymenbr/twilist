@@ -1,22 +1,26 @@
   Meteor.startup(function () {
-
-    BrowserPolicy.content.allowOriginForAll("http://meteor.local");
-    BrowserPolicy.content.allowOriginForAll("*.twitter.com");
-    BrowserPolicy.content.allowOriginForAll("*.googleapis.com");
-    BrowserPolicy.content.allowOriginForAll("*");
-
+/*
     BrowserPolicy.content.allowSameOriginForAll();
-    BrowserPolicy.content.allowDataUrlForAll();
-    
+    BrowserPolicy.content.allowDataUrlForAll(); 
+
+    BrowserPolicy.content.allowOriginForAll("*");
+    BrowserPolicy.content.allowSameOriginForAll("*");
+    BrowserPolicy.content.allowDataUrlForAll("*");
+
+    BrowserPolicy.content.allowImageOrigin("*");
+    BrowserPolicy.content.allowConnectOrigin("*");
+    BrowserPolicy.content.allowFrameOrigin("*");
+
     BrowserPolicy.framing.allowAll();
 
     BrowserPolicy.content.allowEval();
     BrowserPolicy.content.allowInlineStyles();
     BrowserPolicy.content.allowInlineScripts();
-
+    BrowserPolicy.content.allowContentTypeSniffing();
+*/
     // code to run on server at startup
 /*
-    var Twit = Meteor.npmRequire('twit');
+    var twit = Meteor.npmRequire('twit');
 
     var T = new twit({
         consumer_key:         'w0TtlhxFEhYisSu0yWjlzFVk9', // API key
