@@ -1,45 +1,41 @@
-  Meteor.startup(function () {
-/*
-    BrowserPolicy.content.allowSameOriginForAll();
-    BrowserPolicy.content.allowDataUrlForAll(); 
+Meteor.startup(function () {
 
-    BrowserPolicy.content.allowOriginForAll("*");
-    BrowserPolicy.content.allowSameOriginForAll("*");
-    BrowserPolicy.content.allowDataUrlForAll("*");
+    if( Lists.find().count() === 0 ){
 
-    BrowserPolicy.content.allowImageOrigin("*");
-    BrowserPolicy.content.allowConnectOrigin("*");
-    BrowserPolicy.content.allowFrameOrigin("*");
+        var twitterService = getTwitterService();
 
-    BrowserPolicy.framing.allowAll();
+        twitterService.get('lists/ownerships',
+            {
+                screen_name: 'alymenbr',
+            },
+            Meteor.bindEnvironment( 
+                function(err, data, response) {
+                    debugger;
 
-    BrowserPolicy.content.allowEval();
-    BrowserPolicy.content.allowInlineStyles();
-    BrowserPolicy.content.allowInlineScripts();
-    BrowserPolicy.content.allowContentTypeSniffing();
-*/
-    // code to run on server at startup
-/*
+                    for(i = 0; i < data.lists.length; i++){
+                        var newList = data.lists[i];
+                        newList._id = newList.id;
+                        Lists.upsert( {_id: newList._id}, newList );
+                    }
+                }, 
+                function(error) {
+                    console.log( error);
+                })
+        );        
+
+    }
+
+});   
+
+
+function getTwitterService(){
+
     var twit = Meteor.npmRequire('twit');
 
-    var T = new twit({
+    return new twit({
         consumer_key:         'w0TtlhxFEhYisSu0yWjlzFVk9', // API key
         consumer_secret:      'UHoBcWQxZcX3JewnCklHpiYn4XjxUeus9qImiEAU0mIbx3E0rE', // API secret
         access_token:         '1321178677-qvcDQOooSImkJmZz4F9KmIFhltj1w11kwzGiE3w', 
         access_token_secret:  '8kDCYntfNaD5FomvcBkvd8LaJOEqsl2yZghLNWUNeglpy'
     });
-
-    T.get('lists/statuses',
-        {
-            list_id: 197573453, // scrum
-            include_entities: true,
-            count: 3
-            // since_id: 
-            //max_id
-        },
-        function(err, data, response) {
-            console.log(data);
-        }
-    );
-*/
-  });   
+}

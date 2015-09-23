@@ -10,3 +10,4 @@ tweets = [
 
 Template.list.helpers
 	items: tweets
+
