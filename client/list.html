@@ -1,52 +1,31 @@
 <template name="list">
 
-<div class="quote-slider full-bottom">
-    <div class="quote-slider-no-transition-static"  data-snap-ignore="true">
+  <div class="quote-slider full-bottom">
+      <div class="quote-slider-no-transition-static"  data-snap-ignore="true">
 
-        <!-- PAGE1 -->
-        <div class="container">
-            <div class="heading-style-1 container half-bottom center-text">
-                <a href="#"><i class="fa fa-twitter"></i></a>
-                <h4>Agile 1</h4>
-                <div class="heading-block bg-red-dark"></div>
-                <div class="heading-decoration bg-red-dark"></div>
-            </div>
+          {{#each lists}}
+          <div class="container">
+              <div class="heading-style-1 container half-bottom center-text">
+                  <a href="#"><i class="fa fa-twitter"></i></a>
+                  <h4>{{name}} - {{id_str}}</h4>
+                  <div class="heading-block bg-red-dark"></div>
+                  <div class="heading-decoration bg-red-dark"></div>
+              </div>
 
-            {{#each items}}
-                <div class="activity-item container half-bottom">
-                    <h5>{{tweet}}</h5>
-                    <em>@{{user}} {{time}}</em>
-                </div>  
-                <div class="decoration"></div>
-            {{/each}}         
+              {{#each tweets}}
+                  <div class="activity-item container half-bottom">
+                      <h5>{{text}}</h5>
+                      <em>@{{user.screen_name}} {{created_at}}</em>
+                  </div>
+                  <div class="decoration"></div>
+              {{/each}}
 
-        </div>
-        <!-- PAGE1 -->
+          </div>
+          {{/each}}
 
-        <!-- PAGE2 -->
-        <div class="container">
-            <div class="heading-style-1 container half-bottom center-text">
-                <a href="#"><i class="fa fa-twitter"></i></a>
-                <h4>Agile 2</h4>
-                <div class="heading-block bg-red-dark"></div>
-                <div class="heading-decoration bg-red-dark"></div>
-            </div>
-
-            {{#each items}}
-                <div class="activity-item container half-bottom">
-                    <h5>{{tweet}}</h5>
-                    <em>@{{user}} {{time}}</em>
-                </div>  
-                <div class="decoration"></div>
-            {{/each}}         
-
-        </div>
-        <!-- PAGE2 -->
-
-    </div>
-    <a class="next-quote-slider" href="#"><i class="fa fa-angle-right"></i></a>
-    <a class="prev-quote-slider" href="#"><i class="fa fa-angle-left"></i></a>
-</div>
-
+      </div>
+      <a class="next-quote-slider" href="#"><i class="fa fa-angle-right"></i></a>
+      <a class="prev-quote-slider" href="#"><i class="fa fa-angle-left"></i></a>
+  </div>
 
 </template>
