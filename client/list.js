@@ -1,12 +1,10 @@
 Template.list.helpers({
 	lists: function () {
-		var lists = Lists.find();
+		var lists = Lists.find().fetch();
 
     lists.forEach( function(list) {
-			lists.tweets = Tweets.find( {list_id: list.id} );
+			list.tweets = Tweets.find( {list_id: list.id} );
 		});
-
-		lists.rewind();
 
 		return lists;
 	}

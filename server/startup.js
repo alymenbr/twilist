@@ -8,7 +8,7 @@ Meteor.startup(function () {
             {
                 screen_name: 'alymenbr',
             },
-            Meteor.bindEnvironment( 
+            Meteor.bindEnvironment(
                 function(err, data, response) {
                     debugger;
 
@@ -17,15 +17,15 @@ Meteor.startup(function () {
                         newList._id = newList.id;
                         Lists.upsert( {_id: newList._id}, newList );
                     }
-                }, 
+                },
                 function(error) {
                     console.log( error);
                 })
-        );        
+        );
 
     }
 
-});   
+});
 
 
 function getTwitterService(){
@@ -35,7 +35,7 @@ function getTwitterService(){
     return new twit({
         consumer_key:         'w0TtlhxFEhYisSu0yWjlzFVk9', // API key
         consumer_secret:      'UHoBcWQxZcX3JewnCklHpiYn4XjxUeus9qImiEAU0mIbx3E0rE', // API secret
-        access_token:         '1321178677-qvcDQOooSImkJmZz4F9KmIFhltj1w11kwzGiE3w', 
+        access_token:         '1321178677-qvcDQOooSImkJmZz4F9KmIFhltj1w11kwzGiE3w',
         access_token_secret:  '8kDCYntfNaD5FomvcBkvd8LaJOEqsl2yZghLNWUNeglpy'
     });
 }

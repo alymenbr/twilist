@@ -3,4 +3,6 @@ Router.configure
 
 Router.map ->
   this.route('login', {path: '/'})
-  this.route('list', {path: '/list'})
+  this.route('list', {
+    path: '/list'
+    })
