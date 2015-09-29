@@ -26,11 +26,6 @@ App.launchScreens({
   'android_xhdpi_landscape': 'resources/icons/8t.jpg'
 });
 
-App.accessRule(
-    "https://maps.google.com/*",
-    {
-        launchExternal: false
-    }
-);
-
 App.accessRule("*");
+App.accessRule('http://*');
+App.accessRule('https://*');

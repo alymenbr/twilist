@@ -9,3 +9,8 @@ Template.list.helpers({
 		return lists;
 	}
 });
+
+Template.list.rendered = function() {
+  // hack: these third party header animation scripts must be inserted at the bottom of body
+   tweetParser('.tweet');
+};
