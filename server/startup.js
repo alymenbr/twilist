@@ -10,13 +10,14 @@ Meteor.startup(function () {
             },
             Meteor.bindEnvironment(
                 function(err, data, response) {
-                    debugger;
 
                     for(i = 0; i < data.lists.length; i++){
                         var newList = data.lists[i];
                         newList._id = newList.id;
                         Lists.upsert( {_id: newList._id}, newList );
                     }
+
+                    Meteor.call('updateAllLists');
                 },
                 function(error) {
                     console.log( error);

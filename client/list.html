@@ -3,21 +3,28 @@
   <div class="quote-slider full-bottom">
       <div class="quote-slider-no-transition-static"  data-snap-ignore="true">
 
-          {{#each lists}}
+          {{#each list in lists}}
           <div class="container">
               <div class="heading-style-1 container half-bottom center-text">
                   <a href="#"><i class="fa fa-twitter"></i></a>
-                  <h4>{{name}} - {{id_str}}</h4>
+                  <h4>{{list.name}} - {{list.id_str}}</h4>
                   <div class="heading-block bg-red-dark"></div>
                   <div class="heading-decoration bg-red-dark"></div>
               </div>
 
-              {{#each tweets}}
-                  <div class="activity-item container half-bottom">
-                      <h5 class='tweet'>{{text}}</h5>
-                      <em>@{{user.screen_name}} {{created_at}}</em>
+              {{#each tweet in list.tweets}}
+                  <div class="activity-item container full-bottom">
+                      <img class="activity-item-image" style="width: 40px" src="{{tweet.user.profile_image_url}}" alt="img">
+                      <h5 class='tweet'>{{tweet.text}}</h5>
+                      <em>@{{tweet.userName}} {{tweet.created_at}}</em>
+
+                      {{#if tweet.media_url}}
+                      <a href="{{tweet.media_url}}" class="center-text" style="display: block;">
+                            <img style="width: 50%; height: auto;" src="{{tweet.media_url}}" alt="img" />
+                      </a>
+                      {{/if}}
                   </div>
-                  <div class="decoration"></div>
+                  <div class="decoration "></div>
               {{/each}}
           </div>
           {{/each}}
