@@ -55,9 +55,9 @@ function getTwitterService(){
     var twit = Meteor.npmRequire('twit');
 
     return new twit({
-        consumer_key:         'w0TtlhxFEhYisSu0yWjlzFVk9', // API key
-        consumer_secret:      'UHoBcWQxZcX3JewnCklHpiYn4XjxUeus9qImiEAU0mIbx3E0rE', // API secret
-        access_token:         '1321178677-qvcDQOooSImkJmZz4F9KmIFhltj1w11kwzGiE3w',
-        access_token_secret:  '8kDCYntfNaD5FomvcBkvd8LaJOEqsl2yZghLNWUNeglpy'
+        consumer_key:         'xx.xx', // API key
+        consumer_secret:      'xx.xx', // API secret
+        access_token:         'xx-xx',
+        access_token_secret:  'xx-xx'
     });
 }
